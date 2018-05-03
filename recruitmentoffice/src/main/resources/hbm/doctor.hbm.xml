@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="by.htp.recruitmentoffice.domain.Doctor" table="doctors">
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="increment" />
+		</id>
+		<property name="name" type="java.lang.String">
+			<column name="name" />
+		</property>
+		<property name="surname" type="java.lang.String">
+			<column name="surname" />
+		</property>
+		<property name="spec" type="java.lang.String">
+			<column name="spec" />
+		</property>
+		<property name="receiptTime" type="java.util.Date">
+			<column name="receiptTime" />
+		</property>
+	</class>
+</hibernate-mapping>
