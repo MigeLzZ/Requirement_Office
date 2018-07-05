@@ -4,4 +4,5 @@ import by.htp.recruitmentoffice.domain.Doctor;
 
 public interface DoctorDao extends BaseDao<Doctor>{
 
+	void deleteD(int id);
 }

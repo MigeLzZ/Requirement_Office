@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="by.htp.recruitmentoffice.domain.User" table="users">
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="increment" />
+		</id>
+		<property name="login" type="java.lang.String">
+			<column name="login" />
+		</property>
+		<property name="password" type="java.lang.String">
+			<column name="password" />
+		</property>
+		<property name="name" type="java.lang.String">
+			<column name="name" />
+		</property>
+		<property name="surname" type="java.lang.String">
+			<column name="surname" />
+		</property>
+		<property name="age" type="java.lang.String">
+			<column name="age" />
+		</property>
+		<property name="registration" type="java.lang.String">
+			<column name="registration" />
+		</property>
+		<property name="height" type="java.lang.String">
+			<column name="height" />
+		</property>
+		<property name="weight" type="java.lang.String">
+			<column name="weight" />
+		</property>
+		<property name="type_of_blood" type="java.lang.String">
+			<column name="type_of_blood" />
+		</property>
+		<property name="skin_disease" type="java.lang.String">
+			<column name="skin_disease" />
+		</property>
+		<property name="roles_id" type="int">
+			<column name="roles_id" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -25,11 +25,20 @@
 			root
 		</property>
 		
+		<property name="hibernate.enable_lazy_load_no_trans">
+			true
+		</property>		
+		
 		<property name="hibernate.current_session_context_class">
 			thread
 		</property>
 		
 		<mapping resource="hbm/doctor.hbm.xml" />
+		<mapping resource="hbm/call.hbm.xml" />
+		<mapping resource="hbm/privateportfolio.hbm.xml" />
+		<mapping resource="hbm/schedule.hbm.xml" />
+		<mapping resource="hbm/user.hbm.xml" />
+		<mapping resource="hbm/userschedule.hbm.xml" />
 		
 	</session-factory>
 </hibernate-configuration>

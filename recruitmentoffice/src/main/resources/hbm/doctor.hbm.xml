@@ -16,7 +16,7 @@
 		<property name="spec" type="java.lang.String">
 			<column name="spec" />
 		</property>
-		<property name="receiptTime" type="java.util.Date">
+		<property name="receiptTime" type="java.lang.String">
 			<column name="receiptTime" />
 		</property>
 	</class>

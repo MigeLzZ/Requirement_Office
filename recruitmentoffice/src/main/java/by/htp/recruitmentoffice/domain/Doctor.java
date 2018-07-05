@@ -1,15 +1,28 @@
 package by.htp.recruitmentoffice.domain;
 
-import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@javax.persistence.Entity
+@Table(name = "doctors")
 public class Doctor extends Entity {
 
-	private static final long serialVersionUID = 5146974182958964459L;
+	private static final long serialVersionUID = 7853224977530357724L;
 	
+	@Id
+	@GeneratedValue
+	@Column(name = "id")
+	private int id;
+	@Column(name = "name")
 	private String name;
+	@Column(name = "surname")
 	private String surname;
+	@Column(name = "spec")
 	private String spec;
-	private Date receiptTime;
+	@Column(name = "receiptTime")
+	private String receiptTime;
 
 	public Doctor() {
 		super();
@@ -19,12 +32,20 @@ public class Doctor extends Entity {
 		super(id);
 	}
 
-	public Doctor(int id, String name, String surname, String spec, Date receiptTime) {
+	public Doctor(int id, String name, String surname, String spec, String receiptTime) {
 		super(id);
 		this.name = name;
 		this.surname = surname;
 		this.spec = spec;
 		this.receiptTime = receiptTime;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -51,19 +72,19 @@ public class Doctor extends Entity {
 		this.spec = spec;
 	}
 
-	public Date getReceiptTime() {
+	public String getReceiptTime() {
 		return receiptTime;
 	}
 
-	public void setReceiptTime(Date receiptTime) {
+	public void setReceiptTime(String receiptTime) {
 		this.receiptTime = receiptTime;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
-		int result = 1;
-		result = prime * getId();
+		int result = super.hashCode();
+		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((receiptTime == null) ? 0 : receiptTime.hashCode());
 		result = prime * result + ((spec == null) ? 0 : spec.hashCode());
@@ -80,9 +101,9 @@ public class Doctor extends Entity {
 		if (getClass() != obj.getClass())
 			return false;
 		Doctor other = (Doctor) obj;
-		if (getId() != other.getId()) {
+		if (id != other.id)
 			return false;
-		} else if (name == null) {
+		if (name == null) {
 			if (other.name != null)
 				return false;
 		} else if (!name.equals(other.name))
@@ -107,9 +128,13 @@ public class Doctor extends Entity {
 
 	@Override
 	public String toString() {
-		return "Doctor [name=" + name + ", surname=" + surname + ", spec=" + spec + ", receiptTime=" + receiptTime
-				+ ", getId()=" + getId() + "]";
+		return "Doctor{" +
+				"id=" + id + 
+				", name='" + name + '\'' + 
+				", surname'=" + surname + '\'' +
+				", spec='" + spec + '\'' +
+				", receiptTime=" + receiptTime + 
+				"}";
 	}
-
 	
 }
